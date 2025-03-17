@@ -1,6 +1,27 @@
+from collections import namedtuple
+import json
+import csv
+from datetime import datetime
+from typing import List, Dict, Any, NamedTuple
 
-# TODO: Define the Account, Contact, and Opportunity namedtuples and import namedtuple
 
+# Define namedtuples for common Salesforce objects
+Account = namedtuple('Account', [
+    'id', 'name', 'industry', 'type', 'annual_revenue', 
+    'billing_city', 'billing_country', 'created_date'
+])
+
+Contact = namedtuple('Contact', [
+    'id', 'first_name', 'last_name', 'email', 'phone',
+    'title', 'account_id', 'created_date'
+])
+
+Opportunity = namedtuple('Opportunity', [
+    'id', 'name', 'stage', 'amount', 'close_date', 
+    'probability', 'account_id', 'created_date'
+])
+
+# Sample data (as if from Salesforce API)
 accounts = [
     Account('001A', 'Acme Corporation', 'Manufacturing', 'Customer', 1500000, 
             'San Francisco', 'USA', '2020-01-15'),
@@ -43,3 +64,43 @@ opportunities = [
     Opportunity('006F', 'Umbrella Research', 'Negotiation', 450000, '2023-08-15', 
                 70, '001E', '2023-05-01')
 ]
+
+# -----------------------------------------------------------------------------
+# QUERYING DATA
+# -----------------------------------------------------------------------------
+
+
+def find_contacts_by_account(contacts: List[Contact], account_id: str) -> List[Contact]:
+    return [contact for contact in contacts if contact.account_id == account_id]
+
+def find_opportunities_by_stage(opportunities: List[Opportunity], stage: str) -> List[Opportunity]:
+    return [opportunity for opportunity in opportunities if opportunity.stage == stage]
+
+def calculate_total_opportunity_value(opportunities: List[Opportunity]) -> float:
+    return sum(float(opp.amount) for opp in opportunities)
+
+
+acme_id = '001A'
+acme_contacts = find_contacts_by_account(contacts, acme_id)
+
+print(f"Contacts for Acme Corporation (ID: {acme_id}):")
+for contact in acme_contacts:
+    print(f"  - {contact.first_name} {contact.last_name} ({contact.title})")
+
+# Find all opportunities in Negotiation stage
+negotiation_opps = find_opportunities_by_stage(opportunities, 'Negotiation')
+
+print("\nOpportunities in Negotiation stage:")
+for opp in negotiation_opps:
+    print(f"  - {opp.name}: ${float(opp.amount):,.2f} (Probability: {opp.probability}%)")
+
+# Calculate total and weighted opportunity values
+total_value = calculate_total_opportunity_value(opportunities)
+
+print(f"\nTotal opportunity pipeline: ${total_value:,.2f}")
+
+
+
+
+
+
