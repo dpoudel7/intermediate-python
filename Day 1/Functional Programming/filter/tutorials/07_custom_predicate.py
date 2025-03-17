@@ -40,3 +40,61 @@ opportunity_records = [
     }
 ]
 
+class OpportunityFilter:
+    """A class demonstrating advanced filtering techniques."""
+    
+    def __init__(self, records: List[Record]):
+        self.records = records
+        self.predicates: List[Callable[[Record], bool]] = []
+    
+    def add_amount_threshold(self, threshold: float) -> 'OpportunityFilter':
+        """Add amount threshold filter."""
+        self.predicates.append(
+            lambda x: x['amount'] > threshold
+        )
+        return self
+    
+    def add_probability_threshold(self, threshold: float) -> 'OpportunityFilter':
+        """Add probability threshold filter."""
+        self.predicates.append(
+            lambda x: x['probability'] >= threshold
+        )
+        return self
+    
+    def add_stage_filter(self, stages: List[str]) -> 'OpportunityFilter':
+        """Add stage filter."""
+        self.predicates.append(
+            lambda x: x['stage'] in stages
+        )
+        return self
+    
+    def add_custom_filter(self, predicate: Callable[[Record], bool]) -> 'OpportunityFilter':
+        """Add custom filter predicate."""
+        self.predicates.append(predicate)
+        return self
+    
+    def filter(self) -> Iterator[Record]:
+        """Apply all filters in sequence."""
+        result = self.records
+        for predicate in self.predicates:
+            result = filter(predicate, result)
+        return result
+
+def demonstrate_advanced_filtering():
+    """Demonstrate advanced filtering techniques."""
+    # Create filter chain
+    opportunity_filter = OpportunityFilter(opportunity_records)
+    
+    # Build complex filter
+    filtered_opportunities = list(
+        opportunity_filter
+        .add_amount_threshold(50000)
+        .add_probability_threshold(60)
+        .add_stage_filter(['Negotiation', 'Closed Won'])
+        .add_custom_filter(
+            lambda x: 'Partnership' in x['name'] or 'Enterprise' in x['name']
+        )
+        .filter()
+    )
+    
+    return filtered_opportunities

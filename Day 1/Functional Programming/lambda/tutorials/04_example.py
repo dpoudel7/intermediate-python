@@ -30,3 +30,31 @@ opportunities = [
         'type': 'Renewal'
     }
 ]
+
+# Example 1: Calculate weighted amounts
+weighted_amounts = list(map(
+    lambda opp: {
+        'name': opp['name'],
+        'weighted_amount': opp['amount'] * opp['probability'] / 100
+    },
+    opportunities
+))
+print("\nWeighted opportunity amounts:")
+for wa in weighted_amounts:
+    print(f"{wa['name']}: ${wa['weighted_amount']:,.2f}")
+
+# Example 2: Filter and transform in one chain
+high_probability_names = list(map(
+    lambda opp: opp['name'],
+    filter(lambda opp: opp['probability'] >= 75, opportunities)
+))
+print("\nHigh probability opportunities:", high_probability_names)
+
+# Example 3: Complex sorting with multiple criteria
+multi_sorted_opps = sorted(
+    opportunities,
+    key=lambda opp: (opp['stage'] != 'Closed Won', -opp['probability'], -opp['amount'])
+)
+print("\nOpportunities by stage, probability, and amount:")
+for opp in multi_sorted_opps:
+    print(f"{opp['name']}: {opp['stage']}, {opp['probability']}%, ${opp['amount']:,}")

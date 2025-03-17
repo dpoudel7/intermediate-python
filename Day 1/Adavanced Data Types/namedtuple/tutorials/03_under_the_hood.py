@@ -2,17 +2,6 @@
 # UNDER THE HOOD - HOW NAMEDTUPLES WORK
 # -----------------------------------------------------------------------------
 
-"""
-Namedtuples are a type of class that are used to create immutable objects.
-When created, they inherit from the 'tuple' class. And adds properties like:
-
-- _fields
-- _field_defaults
-- _replace
-- _asdict
-- _make
-- _asdict
-"""
 
 from collections import namedtuple
 

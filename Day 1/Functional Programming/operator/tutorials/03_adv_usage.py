@@ -18,3 +18,41 @@ opportunities = [
         ]
     }
 ]
+
+# Function composition with operator functions
+get_products = itemgetter('Products')
+get_price = itemgetter('Price')
+get_quantity = itemgetter('Quantity')
+
+def calculate_product_total(product):
+    return mul(float(get_quantity(product)), float(get_price(product)))
+
+# Calculate total value for each opportunity
+opportunity_values = list(map(
+    lambda opp: reduce(
+        add,
+        map(calculate_product_total, get_products(opp))
+    ),
+    opportunities
+))
+print("\nOpportunity Values:", opportunity_values)
+
+# Error handling with operator functions
+def safe_multiply(x, y):
+    try:
+        return mul(float(x), float(y))
+    except (ValueError, TypeError):
+        return 0.0
+
+# Safe calculations with error handling
+safe_values = list(map(
+    lambda opp: reduce(
+        add,
+        map(
+            lambda p: safe_multiply(get_quantity(p), get_price(p)),
+            get_products(opp)
+        )
+    ),
+    opportunities
+))
+print("Safe Values:", safe_values)

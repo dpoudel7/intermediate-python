@@ -105,11 +105,14 @@ conversion_data = [
     }
 ]
 
-
-
 # TODO: Create a Lead namedtuple with fields matching the lead_data dictionary keys
 # Hint: Use the keys from the first lead_data entry as field names
+Lead = namedtuple('Lead', lead_data[0].keys())
+leads_namedtuple = [Lead(**lead) for lead in lead_data]
 
+print(leads_namedtuple[0])
 
 # TODO: Create a Conversion namedtuple with fields matching the conversion_data dictionary keys
 # Hint: Use the keys from the first conversion_data entry as field names
+Conversion = namedtuple('Conversion', conversion_data[0].keys())
+conversion_namedtuple = [Conversion(**conversion) for conversion in conversion_data]

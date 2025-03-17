@@ -3,6 +3,10 @@ from datetime import datetime
 from typing import List, Dict, DefaultDict
 import json
 
+# -----------------------------------------------------------------------------
+# PART 1: PROCESS AND ANALYZE CUSTOMER SUPPORT TICKETS
+# -----------------------------------------------------------------------------
+
 # Sample support ticket data
 ticket_data = [
     {

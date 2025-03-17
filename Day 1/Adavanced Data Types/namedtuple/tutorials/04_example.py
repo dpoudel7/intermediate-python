@@ -6,9 +6,12 @@ Account = namedtuple('Account', ['id', 'name', 'industry', 'annual_revenue', 'cr
 Contact = namedtuple('Contact', ['id', 'first_name', 'last_name', 'email', 'account_id'])
 Opportunity = namedtuple('Opportunity', ['id', 'name', 'stage', 'amount', 'close_date', 'account_id'])
 
-# Sample data (as if from Salesforce API)
 accounts = [
-    Account('001A', 'Acme Corporation', 'Manufacturing', 1500000, '2020-01-15'),
+    Account(id='001A',
+            name='Acme Corporation',
+            industry='Manufacturing',
+            annual_revenue=1500000,
+            created_date='2020-01-15'),
     Account('001B', 'Globex', 'Technology', 3000000, '2019-05-22'),
     Account('001C', 'Stark Industries', 'Defense', 5000000, '2018-11-30')
 ]
@@ -31,6 +34,7 @@ opportunities = [
 
 acme_id = '001A'
 acme_contacts = [contact for contact in contacts if contact.account_id == acme_id]
+print(acme_contacts)
 print(f"Contacts for Acme Corporation:")
 for contact in acme_contacts:
     print(f"  - {contact.first_name} {contact.last_name} ({contact.email})")
