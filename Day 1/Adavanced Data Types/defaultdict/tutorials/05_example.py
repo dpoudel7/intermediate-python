@@ -19,17 +19,23 @@ for account, opps in account_opportunities.items():
     print(f"{account}: {len(opps)} opportunities")
 
 # Example 2: Aggregating Sales Data
-sales_totals = defaultdict(lambda: {'count': 0, 'total': 0})
+def get_sales_default():
+    return {'count': 0, 'total': 0}
+
+sales_totals = defaultdict(get_sales_default)
 for opp in opportunities:
     sales_totals[opp['account']]['count'] += 1
-    sales_totals[opp['account']]['total'] += opp['amount']
+    sales_totals[opp['account']]['total'] += opp['amount'] # does not call __missing__
 
 print("\nSales Totals by Account:")
 for account, stats in sales_totals.items():
     print(f"{account}: {stats['count']} deals, ${stats['total']:,}")
 
 # Example 3: Building Territory Hierarchy
-territory_hierarchy = defaultdict(lambda: defaultdict(lambda: defaultdict(list)))
+def get_territory_default_factory():
+    return defaultdict(list)
+
+territory_hierarchy = defaultdict(lambda: defaultdict(get_territory_default_factory))
 
 # Sample territory data
 territories = [

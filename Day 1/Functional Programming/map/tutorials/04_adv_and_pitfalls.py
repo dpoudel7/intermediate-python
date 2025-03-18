@@ -21,12 +21,13 @@ def safe_transform(func):
         try:
             return func(item)
         except Exception as e:
-            return {'error': str(e), 'item': item}
+            return None
     return wrapper
 
 # Using safe transform
 data_with_errors = ['1', '2', 'not_a_number', '4']
 safe_int = safe_transform(int)
+
 results = list(map(safe_int, data_with_errors))
 
 print("Results:", results)

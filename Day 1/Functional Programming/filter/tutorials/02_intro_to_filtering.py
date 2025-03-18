@@ -1,6 +1,8 @@
 # Simple filter example
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-even_numbers = list(filter(lambda x: x % 2 == 0, numbers))
+even_fn = lambda x: x % 2 == 0
+even_numbers = list(filter(even_fn, numbers))
+print(even_numbers)
 
 # Equivalent to the previous active users example
 users = [
@@ -9,7 +11,6 @@ users = [
     {'id': 3, 'name': 'Charlie', 'status': 'active'}
 ]
 
-active_users = list(filter(lambda user: user['status'] == 'active', users))
-
-print(even_numbers)
+is_active = lambda user: user['status'] == 'active'
+active_users = list(filter(is_active, users))
 print(active_users)

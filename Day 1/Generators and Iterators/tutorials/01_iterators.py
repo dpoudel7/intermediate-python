@@ -1,4 +1,3 @@
-
 # A simple list to demonstrate iteration
 numbers = [1, 2, 3]
 

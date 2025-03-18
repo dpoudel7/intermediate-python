@@ -22,8 +22,9 @@ opportunities = [
     }
 ]
 
-# Example 1: Filtering high-value opportunities
-high_value = list(filter(lambda opp: opp['amount'] > 20000, opportunities))
+# Example 1: Filtering high-value opportunities (amount > 20,000)
+opp_filter = lambda opp: opp['amount'] > 20000
+high_value = [opp for opp in opportunities if opp_filter(opp)]
 
 # Example 2: Calculating weighted amounts
 weighted_amounts = list(map(

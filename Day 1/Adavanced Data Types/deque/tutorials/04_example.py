@@ -1,5 +1,6 @@
 from collections import deque
 from datetime import datetime
+import time
 
 # Example 2: Rate Limiting
 class RateLimiter:
@@ -14,13 +15,15 @@ class RateLimiter:
         while self.requests and (now - self.requests[0]).seconds > self.time_window:
             self.requests.popleft()
         
+        time.sleep(2)
+
         if len(self.requests) < self.max_requests:
             self.requests.append(now)
             return True
         return False
 
 # Demonstrate rate limiting
-limiter = RateLimiter(max_requests=3, time_window=60)
+limiter = RateLimiter(max_requests=3, time_window=5)
 print("\nRate limiting:")
 for i in range(4):
     allowed = limiter.allow_request()

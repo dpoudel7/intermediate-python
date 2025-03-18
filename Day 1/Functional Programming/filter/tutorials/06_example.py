@@ -1,7 +1,6 @@
 from typing import List, Dict, Optional, Callable, Iterator
 from datetime import datetime
 
-
 # Sample record structure
 Record = Dict[str, str | int | float | datetime]
 

@@ -7,7 +7,7 @@ from itertools import count, cycle, repeat, islice
 
 # Infinite counting
 counter = count(1)  # Counts from 1 indefinitely
-print("count():", list(islice(counter, 5)))  # Take first 5 numbers
+print("count():", list(islice(counter, 50)))  # Take first 5 numbers
 
 # Cycling through elements
 colors = cycle(['red', 'green', 'blue'])
@@ -21,7 +21,7 @@ print("\nrepeat():", list(repeater))
 from itertools import chain, zip_longest
 
 # Chain multiple iterables
-numbers = chain([1, 2], [3, 4])
+numbers = chain([1, 2], "Hello")
 print("\nchain():", list(numbers))
 
 # Zip with different lengths

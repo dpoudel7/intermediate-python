@@ -21,9 +21,15 @@ print("\nBuilt incrementally:", ordered_dict3)
 ordered_dict3.move_to_end('first')  # Move to end
 print("\nAfter moving 'first' to end:", ordered_dict3)
 
-ordered_dict3.move_to_end('second', last=False)  # Move to beginning
+ordered_dict3.move_to_end('third', last=False)  # Move to beginning
+print("After moving 'second' to start:", ordered_dict3)
+
+ordered_dict3.move_to_end('third', last=True) 
 print("After moving 'second' to start:", ordered_dict3)
 
 # Demonstrate order preservation during updates
 ordered_dict3.update({'fourth': 4, 'fifth': 5})
+print("\nAfter update:", ordered_dict3)
+
+ordered_dict3.update({'first': 400, 'fifth': 5})
 print("\nAfter update:", ordered_dict3)

@@ -152,7 +152,7 @@ def find_leads_by_status(leads: List[Lead], status: str) -> List[Lead]:
 
 def find_hot_leads(leads: List[Lead]) -> List[Lead]:
     """Find all leads with a 'Hot' rating."""
-    return [lead for lead in leads if lead.rating == 'Hot']
+    return [lead for lead in leads if lead.rating.lower() == 'hot']
 
 
 def find_conversion_by_lead_id(conversions: List[Conversion], lead_id: str) -> Optional[Conversion]:

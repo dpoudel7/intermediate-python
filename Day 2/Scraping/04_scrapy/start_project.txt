@@ -1,0 +1,4 @@
+scrapy startproject project_name
+
+
+scrapy genspider -t basic maxi_scraper maxi.rs

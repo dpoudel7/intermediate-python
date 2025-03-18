@@ -2,6 +2,7 @@ from collections import OrderedDict
 
 # Example: Data Transformation Pipeline
 class TransformationPipeline(OrderedDict):
+
     def add_step(self, name, transform_func):
         self[name] = transform_func
     

@@ -6,6 +6,8 @@ for i in range(5):
     history.append(i)
     print(f"History after adding {i}: {list(history)}")
 
+print(history) # -> [2, 3, 4]
+
 # LRU Cache implementation
 class LRUCache:
     def __init__(self, maxsize):
@@ -23,6 +25,7 @@ class LRUCache:
     def put(self, key, value):
         if key in self.cache:
             self.history.remove(key)
+            
         elif len(self.history) == self.history.maxlen:
             # Remove least recently used
             lru_key = self.history.popleft()

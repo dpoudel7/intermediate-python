@@ -26,12 +26,12 @@ class Countdown:
 countdown = Countdown(3)
 
 print("First iteration:")
-for num in countdown:
-    print(num)
+for num in countdown: # -> __iter__ is called
+    print(num) # __next__ is called
 
 print("\nSecond iteration (starts over):")
-for num in countdown:
-    print(num)
+for num in countdown:  # -> __iter__ is called
+    print(num) # __next__ is called
 
 # Manual iteration
 print("\nManual iteration:")

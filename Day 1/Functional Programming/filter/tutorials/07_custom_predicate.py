@@ -41,7 +41,6 @@ opportunity_records = [
 ]
 
 class OpportunityFilter:
-    """A class demonstrating advanced filtering techniques."""
     
     def __init__(self, records: List[Record]):
         self.records = records
