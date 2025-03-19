@@ -35,7 +35,7 @@ def demonstrate_exitstack():
     
     # Example 1: Basic multiple file handling
     print("Example 1: Processing multiple files")
-    process_multiple_files(['source.txt', 'example.txt'])
+    # process_multiple_files(['source.txt', 'example.txt'])
     
     # Example 2: Conditional resource management
     print("\nExample 2: Conditional resource management")
@@ -59,12 +59,9 @@ def demonstrate_exitstack():
         print("Registered cleanup callbacks")
     print("Callbacks executed in reverse order")
 
-if __name__ == "__main__":
-    # Create some sample files
-    with open('exists.txt', 'w') as f:
-        f.write("This file exists\n")
+
     
-    demonstrate_exitstack()
+demonstrate_exitstack()
 
 
 

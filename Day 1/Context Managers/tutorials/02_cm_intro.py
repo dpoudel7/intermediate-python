@@ -8,13 +8,13 @@ Compare these examples with the previous tutorial to see the difference.
 """
 
 # Example 1: File handling with context manager
+
 print("Example 1: Writing to a file")
 with open('example.txt', 'w') as file:
     file.write('Hello, World!')
 print("File automatically closed")
 
 # Example 2: Multiple resources with context managers
-print("\nExample 2: Copying file content")
 with open('source.txt', 'r') as source, open('destination.txt', 'w') as dest:
     content = source.read()
     dest.write(content)

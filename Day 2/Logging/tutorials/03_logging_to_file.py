@@ -2,6 +2,11 @@ import logging
 import time
 import random
 
+records = [
+    {"id": 1, "value": "foo"},
+    {"id": 2, "value": "bar"},
+]
+
 """Process records with logging to both console and file."""
 # Configure logging to write to file
 logging.basicConfig(

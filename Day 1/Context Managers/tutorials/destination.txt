@@ -1,0 +1,6 @@
+This is a sample text file.
+It contains multiple lines
+to demonstrate file handling
+with and without context managers.
+We'll use this file in our examples
+to show proper resource management. 

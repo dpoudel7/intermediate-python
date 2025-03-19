@@ -9,9 +9,8 @@ from classes import Employee
 def employee():
     return Employee("Jane", 25, 50000)
 
-
 def test_employee_creation(employee):
-    assert employee.name == "Jane"
+    assert employee.lastname == "Jane"
     assert employee.age == 25
     assert employee.salary == 50000
 

@@ -17,14 +17,19 @@ class FileManager:
 
     def __enter__(self):
         self.file = open(self.filename, self.mode)
-        return self.file
+        BIG_TEST_STRING = "HEY THERE! :))"
+        return self.file, BIG_TEST_STRING
 
     def __exit__(self, exc_type, exc_value, traceback):
         self.file.close()
 
 # Example usage
-with FileManager('example.txt', 'w') as file:
-    file.write('Hello, World!')
+try:
+    with FileManager('example.txt', 'w') as (file, ts):
+        print(ts)
+        file.write('Hello, World!')
+except:
+    print("An error occurred")
 
 print("File automatically closed")
 

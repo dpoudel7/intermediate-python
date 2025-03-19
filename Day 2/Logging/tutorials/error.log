@@ -1,0 +1,2 @@
+2025-03-18 18:51:46,928 - salesforce.sync - ERROR - D:\Development\Salesforce\intermediate-python\Day 2\Logging\tutorials\06_multiple_logging_files.py:45 - Error message - visible everywhere including error log
+2025-03-18 18:51:46,929 - salesforce.sync - ERROR - D:\Development\Salesforce\intermediate-python\Day 2\Logging\tutorials\06_multiple_logging_files.py:54 - This is an error message

@@ -1,0 +1,6 @@
+2025-03-18 18:35:31,637 - INFO - Starting record processing...
+2025-03-18 18:35:31,637 - INFO - Found 2 records to process
+2025-03-18 18:35:31,738 - DEBUG - Successfully processed record 1
+2025-03-18 18:35:31,838 - DEBUG - Successfully processed record 2
+2025-03-18 18:35:31,838 - INFO - Processing completed!
+2025-03-18 18:35:31,839 - INFO - Results: 2 successful, 0 failed

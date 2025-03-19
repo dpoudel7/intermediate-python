@@ -25,7 +25,7 @@ def setup_rotating_logs():
         'sync_time.log',
         when='midnight',
         interval=1,
-        backupCount=7
+        backupCount=20
     )
     time_handler.setLevel(logging.INFO)
     time_handler.setFormatter(formatter)

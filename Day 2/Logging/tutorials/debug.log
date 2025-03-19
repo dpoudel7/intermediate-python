@@ -1,0 +1,8 @@
+2025-03-18 18:51:46,927 - salesforce.sync - DEBUG - D:\Development\Salesforce\intermediate-python\Day 2\Logging\tutorials\06_multiple_logging_files.py:42 - Debug message - check detailed log file
+2025-03-18 18:51:46,928 - salesforce.sync - INFO - D:\Development\Salesforce\intermediate-python\Day 2\Logging\tutorials\06_multiple_logging_files.py:43 - Info message - visible in console and log file
+2025-03-18 18:51:46,928 - salesforce.sync - WARNING - D:\Development\Salesforce\intermediate-python\Day 2\Logging\tutorials\06_multiple_logging_files.py:44 - Warning message - visible in console and log file
+2025-03-18 18:51:46,928 - salesforce.sync - ERROR - D:\Development\Salesforce\intermediate-python\Day 2\Logging\tutorials\06_multiple_logging_files.py:45 - Error message - visible everywhere including error log
+2025-03-18 18:51:46,928 - salesforce.sync - INFO - D:\Development\Salesforce\intermediate-python\Day 2\Logging\tutorials\06_multiple_logging_files.py:51 - This is an info message
+2025-03-18 18:51:46,929 - salesforce.sync - DEBUG - D:\Development\Salesforce\intermediate-python\Day 2\Logging\tutorials\06_multiple_logging_files.py:52 - This is a debug message
+2025-03-18 18:51:46,929 - salesforce.sync - WARNING - D:\Development\Salesforce\intermediate-python\Day 2\Logging\tutorials\06_multiple_logging_files.py:53 - This is a warning message
+2025-03-18 18:51:46,929 - salesforce.sync - ERROR - D:\Development\Salesforce\intermediate-python\Day 2\Logging\tutorials\06_multiple_logging_files.py:54 - This is an error message

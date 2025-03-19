@@ -5,8 +5,8 @@ import unittest.mock as mock
 
 
 @mock.patch("service.get_user_by_id")
-def test_get_user_by_id(mock_get_user_by_id):
-    mock_get_user_by_id.return_value = {"id": 1, "name": "John", "email": "john@example.com"}
+def test_get_user_by_id(THIS_IS_A_MOCK):
+    THIS_IS_A_MOCK.return_value = {"id": 1, "name": "John", "email": "john@example.com"}
 
     user_name = get_user_by_id(1)
     

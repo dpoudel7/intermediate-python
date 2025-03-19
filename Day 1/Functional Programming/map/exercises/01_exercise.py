@@ -34,15 +34,31 @@ def exercise():
     
     # TODO 1: Create a list of opportunity summaries for a report
     # Format: {"opportunity": "New Software", "account": "Acme Corp", "value": "50000.00"}
-    opportunity_summaries = None  # Replace None with your map operation
+    opportunity_summaries = list(map(
+        lambda opp: {
+            "opportunity": opp["Name"],
+            "account": opp["Account"]["Name"],
+            "value": float(opp["Amount"])
+        },
+        opportunities
+    ))
     
     # TODO 2: Calculate weighted amounts for pipeline report
     # Format: {"name": "New Software", "weighted_amount": 30000.00} (amount * probability / 100)
-    weighted_amounts = None  # Replace None with your map operation
+    weighted_amounts = list(map(
+        lambda opp: {
+            "name": opp["Name"],
+            "weighted_amount": float(opp["Amount"]) * float(opp["Probability"]) / 100
+        },
+        opportunities
+    ))
     
     # TODO 3: Create a list of opportunities by industry
     # Format: "Technology: New Software ($50000.00)"
-    opportunities_by_industry = None  # Replace None with your map operation
+    opportunities_by_industry = list(map(
+        lambda opp: opp["Account"]["Industry"] + ": " + opp["Name"] + f" (${opp['Amount']})",
+        opportunities
+    ))
     
     # Test your solutions
     if opportunity_summaries and weighted_amounts and opportunities_by_industry:

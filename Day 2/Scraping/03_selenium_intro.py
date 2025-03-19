@@ -2,7 +2,6 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By 
 from webdriver_manager.chrome import ChromeDriverManager 
 from selenium.common.exceptions import WebDriverException 
-from selenium import webdriver 
 from selenium.webdriver.chrome.service import Service 
 
 import time 
@@ -83,7 +82,6 @@ class MaxiScraper(ScraperBase):
         ] 
          
     def __link_builder(self, link, page_num): 
- 
         return link + "?pageNumber={}".format(page_num) 
  
     def __get_discount_dates(self, url): 
@@ -97,7 +95,7 @@ class MaxiScraper(ScraperBase):
         end = None 
          
         try: 
-            date = product_page_obj.find("span", attrs={'data-testid' : "promo-expiration-date"}).text 
+            date = product_page_obj.find("span", attrs={'data-testid' : "tag-promo-expiration-date"}).text 
  
             parts = date.lower().split("do") 
             end = parts[-1].strip() 
@@ -226,8 +224,6 @@ class MaxiScraper(ScraperBase):
             print("IMG error " + str(e)) 
             return "" 
  
- 
-if name == "__main__": 
-         
-        scraper = MaxiScraper() 
-        scraper.scrape()
+
+scraper = MaxiScraper(headless=False) 
+scraper.scrape("maxi_products.csv")

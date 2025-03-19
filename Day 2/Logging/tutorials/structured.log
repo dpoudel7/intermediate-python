@@ -1,0 +1,2 @@
+{"timestamp": "2025-03-18 19:12:19,534", "level": "INFO", "logger": "salesforce.structured", "event": {"event_type": "sync", "org_id": "ORG123", "user_id": "USER456", "operation": "account_update", "status": "success", "duration_ms": 1234.56, "record_count": 100}}
+{"timestamp": "2025-03-18 19:12:19,534", "level": "ERROR", "logger": "salesforce.structured", "event": {"event_type": "sync", "org_id": "ORG123", "user_id": "USER456", "operation": "contact_update", "status": "error", "duration_ms": 567.89, "error_message": "API timeout"}}

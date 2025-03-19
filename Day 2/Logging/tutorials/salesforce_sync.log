@@ -1,0 +1,8 @@
+2025-03-18 18:47:52,917 - salesforce - DEBUG - D:\Development\Salesforce\intermediate-python\Day 2\Logging\tutorials\05_logging_config.py:55 - This is a debug message
+2025-03-18 18:47:52,918 - salesforce - INFO - D:\Development\Salesforce\intermediate-python\Day 2\Logging\tutorials\05_logging_config.py:56 - This is an info message
+2025-03-18 18:47:52,918 - salesforce - WARNING - D:\Development\Salesforce\intermediate-python\Day 2\Logging\tutorials\05_logging_config.py:57 - This is a warning message
+2025-03-18 18:47:52,918 - salesforce - ERROR - D:\Development\Salesforce\intermediate-python\Day 2\Logging\tutorials\05_logging_config.py:58 - This is an error message
+2025-03-18 18:47:52,918 - salesforce - INFO - D:\Development\Salesforce\intermediate-python\Day 2\Logging\tutorials\05_logging_config.py:64 - This is an info message
+2025-03-18 18:47:52,919 - salesforce - DEBUG - D:\Development\Salesforce\intermediate-python\Day 2\Logging\tutorials\05_logging_config.py:65 - This is a debug message
+2025-03-18 18:47:52,919 - salesforce - WARNING - D:\Development\Salesforce\intermediate-python\Day 2\Logging\tutorials\05_logging_config.py:66 - This is a warning message
+2025-03-18 18:47:52,919 - salesforce - ERROR - D:\Development\Salesforce\intermediate-python\Day 2\Logging\tutorials\05_logging_config.py:67 - This is an error message

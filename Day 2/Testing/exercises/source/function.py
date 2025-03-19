@@ -51,4 +51,7 @@ def string_calculator(numbers: str) -> int:
         3
     """
     # TODO: Implement this function
-    pass
+    if len(numbers) == 0:
+        return 0
+    
+    return sum(map(int, numbers.replace(".", "").split(",")))

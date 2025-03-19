@@ -7,9 +7,8 @@ database = {
     ]
 }
 
-
 def get_user_by_id(user_id):
-    return database["users"].get(user_id - 1)
+    return database["users"][user_id - 1]
 
 
 

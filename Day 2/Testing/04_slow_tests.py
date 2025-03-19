@@ -10,7 +10,7 @@ def test_slow_function():
 
 @pytest.mark.slow
 def test_slow_function_slow():
-    time.sleep(2)
+    time.sleep(6)
     result = multiply(2, 3)
     assert result == 6
 

@@ -15,4 +15,5 @@ response = requests.get(url, headers=headers, timeout=10)
 response.raise_for_status()
 
 # Print the source code
-print(response.text)
+with open("source.html", "w", encoding="utf-8") as file:
+    file.write(response.text)

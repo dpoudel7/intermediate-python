@@ -3,6 +3,11 @@ import time
 import random
 from datetime import datetime
 
+records = [
+    {"id": 1, "value": "foo"},
+    {"id": 2, "value": "bar"},
+]
+
 """Process records using appropriate log levels."""
 # Configure logging with a more detailed format
 logging.basicConfig(

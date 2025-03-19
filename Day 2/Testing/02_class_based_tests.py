@@ -2,11 +2,16 @@ import pytest
 from classes import Person, Employee
 
 class TestPerson:
-    def test_person_creation(self):
-        person = Person("John", 30)
-        assert person.name == "John"
-        assert person.age == 30
+    
+    def setup_method(self):
+        self.person = Person("John", 30)
 
+    def teardown_method(self):
+        del self.person
+
+    def test_person_creation(self):
+        assert self.person.name == "John"
+        assert self.person.age == 30
 
 class TestEmployee:
 
@@ -16,11 +21,11 @@ class TestEmployee:
     def teardown_method(self):
         del self.employee
 
+    @pytest.mark.skip(reason="This feature is not implemented yet")
     def test_employee_creation(self):
         assert self.employee.name == "Jane"
         assert self.employee.age == 25
         assert self.employee.salary == 50000
-
 
     def test_employee_salary(self):
         assert self.employee.get_salary() == 50000

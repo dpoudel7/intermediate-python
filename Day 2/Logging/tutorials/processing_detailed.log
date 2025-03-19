@@ -1,0 +1,10 @@
+2025-03-18 18:39:56,696 - INFO - [__main__] - Starting record processing...
+2025-03-18 18:39:56,696 - DEBUG - [__main__] - Processing started at: 2025-03-18 18:39:56.696140
+2025-03-18 18:39:56,696 - INFO - [__main__] - Found 2 records to process
+2025-03-18 18:39:56,696 - DEBUG - [__main__] - Processing record: {'id': 1, 'value': 'foo'}
+2025-03-18 18:39:56,797 - DEBUG - [__main__] - Successfully processed record 1
+2025-03-18 18:39:56,797 - DEBUG - [__main__] - Processing record: {'id': 2, 'value': 'bar'}
+2025-03-18 18:39:56,898 - DEBUG - [__main__] - Successfully processed record 2
+2025-03-18 18:39:56,898 - INFO - [__main__] - Processing completed!
+2025-03-18 18:39:56,898 - INFO - [__main__] - Results: 2 successful, 0 failed (took 0.20 seconds)
+2025-03-18 18:39:56,899 - INFO - [__main__] - All records processed successfully!

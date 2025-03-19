@@ -106,8 +106,16 @@ class CloudStorageConnection:
     
     def __enter__(self):
         # TODO: Implement connection logic
-        pass
+        self.storage.connect()
+        return self.storage
     
     def __exit__(self, exc_type, exc_val, exc_tb):
         # TODO: Implement disconnection logic
-        pass
+        try:
+            self.storage.disconnect()
+        except ConnectionError as e:
+            logging.error(f"Failed to disconnect: {e}")
+        except Exception as e:
+            logging.error(f"Unexpected error during disconnection: {e}")
+        finally:
+            return True
