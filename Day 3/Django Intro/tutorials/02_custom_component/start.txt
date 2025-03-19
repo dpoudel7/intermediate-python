@@ -1,0 +1,5 @@
+# Create app
+python manage.py startapp myapp
+
+# Run server
+python manage.py runserver

@@ -1,0 +1,24 @@
+{% extends "template.html" %}
+
+{% block content %}
+    <h1>Product</h1>
+    <p>This is a product page</p>
+
+    <p>
+        {{ name }}
+    </p>
+
+    <p>
+        {{ price }}
+    </p>
+
+    <p>
+        {% if description %}
+            {{ description }}
+        {% else %}
+            Coming soon! :)
+        {% endif %}
+    </p>
+
+    <img src="{{ image }}" alt="{{ name }}">
+{% endblock %}
